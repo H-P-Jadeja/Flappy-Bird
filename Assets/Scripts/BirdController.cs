@@ -49,13 +49,20 @@ public class BirdController : MonoBehaviour
     //         Object.FindAnyObjectByType<GameManager>().ScorePoint();
     //     }
     // }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log($"Collided with object: {other.gameObject.name} | Tag: {other.gameObject.tag}");
-    }
+    // private void OnCollisionEnter2D(Collision2D other)
+    // {
+    //     Debug.Log($"Collided with object: {other.gameObject.name} | Tag: {other.gameObject.tag}");
+    // }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Triggered by object: {other.gameObject.name} | Tag: {other.gameObject.tag}");
+        // Debug.Log($"Triggered by object: {other.gameObject.name} | Tag: {other.gameObject.tag}");
+        if (other.gameObject.tag == "Obstacle"){
+            Object.FindAnyObjectByType<GameManager>().GameOver();
+        }
+        if (other.gameObject.tag == "Scoring")
+        {
+            Object.FindAnyObjectByType<GameManager>().ScorePoint();
+        }
     }
 }
