@@ -6,13 +6,26 @@
 
 <br/>
 
+### 🌐 [▶️ CLICK HERE TO PLAY LIVE IN BROWSER](https://flappy-bird-lake-psi.vercel.app/) 🎮
+
+<br/>
+
+[![Play Live](https://img.shields.io/badge/▶️_Play_Live_Game-Vercel-ff4757?style=for-the-badge&logo=vercel&logoColor=white)](https://flappy-bird-lake-psi.vercel.app/)
 [![Unity](https://img.shields.io/badge/Engine-Unity-000000?style=for-the-badge&logo=unity&logoColor=white)](https://unity.com/)
 [![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![Gemini AI](https://img.shields.io/badge/Powered%20by-Gemini%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://gemini.google.com/)
-[![Status](https://img.shields.io/badge/Status-Playable-brightgreen?style=for-the-badge)](#)
+[![Status](https://img.shields.io/badge/Status-Playable-brightgreen?style=for-the-badge)](https://flappy-bird-lake-psi.vercel.app/)
 [![First Project](https://img.shields.io/badge/This%20is%20my-1st%20Unity%20Project-ff6b35?style=for-the-badge)](#)
 
 </div>
+
+---
+
+## 🌐 Play Live in Browser
+
+No download or setup required! You can play the WebGL version directly in your desktop or mobile web browser:
+
+👉 **[https://flappy-bird-lake-psi.vercel.app/](https://flappy-bird-lake-psi.vercel.app/)** 👈
 
 ---
 
@@ -44,7 +57,7 @@ Gemini helped me with:
 
 | Action | Control |
 |--------|---------|
-| 🐦 Flap / Jump | `Space Bar` |
+| 🐦 Flap / Jump | `Space Bar` or Tap (on touch devices) |
 | ▶️ Start Game | Click the **Play Button** |
 | 🔄 Restart | Click **Play Button** after Game Over |
 
@@ -70,6 +83,7 @@ Flappy Bird/
 │   ├── 🎬  Scenes/           → The main game scene
 │   └── ⚙️  Settings/         → Unity input & render settings
 │
+├── 📁 dist/                  → WebGL build artifacts hosted on Vercel
 ├── 📦 Packages/              → Unity package dependencies
 ├── ⚙️  ProjectSettings/      → Unity project configuration
 └── 📄 README.md              → You're reading it! 😊
@@ -152,6 +166,7 @@ meshRenderer.material.mainTextureOffset += new Vector2(animationSpeed * Time.del
 
 ## ✨ Features
 
+- ✅ **Playable live online** via WebGL deployment on Vercel
 - ✅ Smooth **60 FPS** target gameplay
 - ✅ Animated **3-frame bird wing flapping**
 - ✅ **Infinitely scrolling** background & ground
@@ -165,13 +180,21 @@ meshRenderer.material.mainTextureOffset += new Vector2(animationSpeed * Time.del
 
 ---
 
-## 🚀 Getting Started
+## 🚀 How to Run & Play
 
-### Prerequisites
+### 🌐 Option 1: Play Online in Browser (Recommended)
+No installation needed! Click to play directly:
+👉 **[https://flappy-bird-lake-psi.vercel.app/](https://flappy-bird-lake-psi.vercel.app/)**
+
+---
+
+### 💻 Option 2: Open & Run in Unity Editor
+
+#### Prerequisites
 - [Unity Hub](https://unity.com/download) installed
 - **Unity 6.x** or later
 
-### Run the Game
+#### Steps
 1. **Clone** this repository:
    ```bash
    git clone https://github.com/H-P-Jadeja/Flappy-Bird.git
@@ -198,6 +221,7 @@ This project represents a **milestone** in my development journey. Starting with
 | 🎨 2D Rendering | SpriteRenderer, Materials, UV texture scrolling |
 | 🏗️ Game Architecture | Inter-script communication with `FindAnyObjectByType<T>()` |
 | ⏱️ Timing | `InvokeRepeating`, `Time.deltaTime`, `Time.timeScale` |
+| 🌐 WebGL Deployment | Exporting Unity builds to WebGL & deploying on Vercel |
 | 🤖 AI-Assisted Dev | Using Gemini AI as a learning partner & code mentor |
 
 ---
@@ -209,6 +233,7 @@ This project represents a **milestone** in my development journey. Starting with
 | **Dong Nguyen** | Original creator of Flappy Bird (2013) — the game that started it all |
 | **Google Gemini AI** | My AI mentor who guided me through every single step of this project |
 | **Unity Technologies** | For the incredible (and free!) game engine that made this possible |
+| **Vercel** | For seamless WebGL web hosting and instant deployment |
 | **The Unity Community** | For the amazing tutorials, forums, and documentation |
 
 ---
@@ -227,6 +252,9 @@ This project represents a **milestone** in my development journey. Starting with
 
 **Made with ❤️, Unity, C#, and a LOT of help from 🤖 Gemini AI**
 
+<br/>
+
+[![Play Live](https://img.shields.io/badge/▶️_Play_Live-Vercel-ff4757?style=for-the-badge&logo=vercel&logoColor=white)](https://flappy-bird-lake-psi.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-H--P--Jadeja-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/H-P-Jadeja/Flappy-Bird)
 [![Gemini](https://img.shields.io/badge/AI%20Partner-Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://gemini.google.com/)
 [![Unity](https://img.shields.io/badge/Built%20With-Unity%20Engine-000000?style=for-the-badge&logo=unity&logoColor=white)](https://unity.com/)
