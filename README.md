@@ -1,268 +1,139 @@
-<div align="center">
+# Flappy Bird – Unity Edition
 
-# 🐦 Flappy Bird — Unity Edition
+A 2D recreation of the classic Flappy Bird game, built with **Unity 6** and **C#**. This is my first Unity project, developed as my individual Capstone Project for the ISD course.
 
-### *My very first Unity Engine project — built with passion & a little help from Gemini AI* 🤖✨
+[![Play Live](https://img.shields.io/badge/Play_Live-Vercel-ff4757?style=for-the-badge&logo=vercel&logoColor=white)](https://flappy-bird-lake-psi.vercel.app/)
+![Unity](https://img.shields.io/badge/Engine-Unity_6-000000?style=for-the-badge&logo=unity&logoColor=white)
+![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
-<br/>
-
-### 🌐 [▶️ CLICK HERE TO PLAY LIVE IN BROWSER](https://flappy-bird-lake-psi.vercel.app/) 🎮
-
-<br/>
-
-[![Play Live](https://img.shields.io/badge/▶️_Play_Live_Game-Vercel-ff4757?style=for-the-badge&logo=vercel&logoColor=white)](https://flappy-bird-lake-psi.vercel.app/)
-[![Unity](https://img.shields.io/badge/Engine-Unity-000000?style=for-the-badge&logo=unity&logoColor=white)](https://unity.com/)
-[![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/csharp/)
-[![Gemini AI](https://img.shields.io/badge/Powered%20by-Gemini%20AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://gemini.google.com/)
-[![Status](https://img.shields.io/badge/Status-Playable-brightgreen?style=for-the-badge)](https://flappy-bird-lake-psi.vercel.app/)
-[![First Project](https://img.shields.io/badge/This%20is%20my-1st%20Unity%20Project-ff6b35?style=for-the-badge)](#)
-
-</div>
+**Play in your browser (WebGL):** https://flappy-bird-lake-psi.vercel.app/
 
 ---
 
-## 🌐 Play Live in Browser
+## About the Game
 
-No download or setup required! You can play the WebGL version directly in your desktop or mobile web browser:
+The player controls a bird that constantly falls due to gravity. Pressing **Space** makes the bird flap upward. The goal is to fly through the gaps between pipes for as long as possible. Each pipe pair passed gives **+1 score**, and touching a pipe ends the game.
 
-👉 **[https://flappy-bird-lake-psi.vercel.app/](https://flappy-bird-lake-psi.vercel.app/)** 👈
+## Controls
 
----
+| Action | Input |
+| ------ | ----- |
+| Flap | `Space` key |
+| Start / Restart | Click the **Play** button |
 
-## 🎮 About This Game
-
-**Flappy Bird — Unity Edition** is a faithful recreation of the legendary 2013 mobile game, **Flappy Bird**, built from the ground up using the **Unity Game Engine**. The classic gameplay is simple yet brutally challenging — press `Space` to flap the bird's wings, navigate through an endless stream of pipes, and survive as long as you can!
-
-> 🌟 **What makes this special?** This is my **very first ever Unity project**. I had zero prior game-development experience before starting this. Armed with curiosity, determination, and the guidance of **Google Gemini AI**, I built this game piece by piece — and it actually works beautifully! 🎉
-
----
-
-## 🤖 Built with Gemini AI
-
-One of the most exciting parts of this journey was learning how to leverage **Google Gemini AI** as a coding assistant and mentor throughout the entire development process.
-
-Gemini helped me with:
-- 🧠 **Understanding Unity concepts** like MonoBehaviour, Rigidbody2D, and Colliders
-- 🐛 **Debugging tricky issues** like the difference between trigger vs collision detection
-- 📐 **Designing the game architecture** — how scripts talk to each other
-- 🎨 **Generating game assets** — some sprites in this project were even Gemini-generated! *(check `Gemini_Generated_Image` in `Assets/Sprites/`)*
-- 📖 **Learning C# on the fly** — writing clean, working code from scratch
-- ⚡ **Optimizing game performance** — targeting 60 FPS from day one
-
-> *"I didn't just copy-paste code — I used Gemini as a teacher, asking WHY things work the way they do. This project is proof that AI and human curiosity together can build something great."*
+> Input is handled with Unity's new **Input System** (keyboard). Touch input is not implemented yet.
 
 ---
 
-## 🕹️ How to Play
+## Features
 
-| Action | Control |
-|--------|---------|
-| 🐦 Flap / Jump | `Space Bar` or Tap (on touch devices) |
-| ▶️ Start Game | Click the **Play Button** |
-| 🔄 Restart | Click **Play Button** after Game Over |
-
-### 🎯 Objective
-- Guide the bird through the gaps between the green pipes
-- **Every pipe pair you pass = +1 Score**
-- Don't hit the pipes or the ground — **Game Over!**
-- Beat your high score and keep improving! 🏆
+- Physics-based flapping using `Rigidbody2D`
+- Three-frame animated bird wings
+- Endlessly scrolling background (texture offset scrolling)
+- Randomly positioned pipes spawned at regular intervals
+- Live score display using Unity UI
+- Game Over screen with a Play button to restart
+- Clean restart: bird position, rotation, velocity, score, and pipes are all reset
+- Target frame rate set to 60 FPS
+- WebGL build deployed on Vercel
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 Flappy Bird/
-│
-├── 📁 Assets/
-│   ├── 🖼️  Sprites/          → All game graphics (bird, pipes, background, UI)
-│   ├── 📜  Scripts/          → All C# game logic (5 scripts)
-│   ├── 🎨  Materials/        → Unity materials for rendering
-│   ├── 🔤  Fonts/            → Typography assets
-│   ├── 🧱  Mould_For_Pipe/   → Pipe prefab mould
-│   ├── 🎬  Scenes/           → The main game scene
-│   └── ⚙️  Settings/         → Unity input & render settings
-│
-├── 📁 dist/                  → WebGL build artifacts hosted on Vercel
-├── 📦 Packages/              → Unity package dependencies
-├── ⚙️  ProjectSettings/      → Unity project configuration
-└── 📄 README.md              → You're reading it! 😊
+├── Assets/
+│   ├── Scripts/          C# game logic (5 scripts)
+│   ├── Sprites/          Bird, pipes, background, and UI graphics
+│   ├── Materials/        Materials (including the scrolling background)
+│   ├── Fonts/            UI fonts
+│   ├── Mould_For_Pipe/   Pipe prefab
+│   ├── Scenes/           Main game scene
+│   └── Settings/         Input and render settings
+├── Packages/             Unity package dependencies
+├── ProjectSettings/      Unity project configuration
+├── dist/                 WebGL build files hosted on Vercel
+└── README.md
 ```
 
 ---
 
-## 📜 The Scripts — Game Logic Breakdown
+## Scripts
 
-This game is powered by **5 C# scripts**, each with a specific, focused role:
+| Script | Responsibility |
+| ------ | -------------- |
+| `BirdController.cs` | Reads Space input and sets the bird's upward velocity. Animates the wing sprites. Detects trigger collisions with pipes (game over) and score zones (score). |
+| `GameManager.cs` | Controls game flow, score, and UI. Pauses the game at start and on game over. Resets everything when Play is pressed. |
+| `Spawner.cs` | Spawns a pipe prefab every 2 seconds at a random vertical offset. |
+| `Pipes.cs` | Moves each pipe to the left every frame and destroys it once it leaves the screen. |
+| `BackgroundMovement.cs` | Scrolls the background by changing the material's texture offset every frame. |
 
-### 🐦 `BirdController.cs`
-> Controls the player character — the bird!
+### How it works
 
-- Handles **Space bar input** using Unity's new Input System
-- Applies **upward velocity** to simulate a flap/jump
-- Drives a **3-frame wing animation** loop using `InvokeRepeating`
-- Detects **trigger collisions** to signal Game Over or Score point events
-
-```csharp
-// Core flap mechanic — clean and instant!
-rb.linearVelocity = new Vector2(0, flapStrength);
-```
-
----
-
-### 🎮 `GameManager.cs`
-> The brain of the game — manages all game states.
-
-- Controls **Play / Pause / Game Over** state transitions
-- Manages the **score counter** with live UI text updates
-- On restart: resets bird position, rotation, and physics velocity to zero
-- Destroys all existing pipes on the screen for a clean fresh start
-- Locks the game to **60 FPS** for smooth, consistent gameplay
-
-```csharp
-Application.targetFrameRate = 60; // Silky smooth from the start!
-```
+- **Flapping:** when Space is pressed, the bird's `Rigidbody2D.linearVelocity` is set to a fixed upward value, so every flap has the same strength. Gravity pulls it down between flaps.
+- **Collision and scoring:** pipes are tagged `Obstacle` and the gap between each pipe pair has an invisible trigger tagged `Scoring`. `OnTriggerEnter2D` in `BirdController` checks the tag and calls `GameOver()` or `ScorePoint()` on the `GameManager`.
+- **Game state:** the game starts paused. `Pause()` sets `Time.timeScale = 0` and disables the bird controller. `Play()` sets `Time.timeScale = 1`, hides the UI, resets the bird, and destroys leftover pipes. Because movement, scrolling, and animation use scaled time, setting `timeScale` to 0 freezes all of them.
+- **Pipes:** movement uses `Time.deltaTime` so speed does not depend on frame rate. Pipes destroy themselves at `x < -12` to avoid piling up in memory.
 
 ---
 
-### 🌿 `Pipes.cs`
-> Moves each pipe pair from right to left.
+## Unity Concepts Used
 
-- Every pipe continuously moves **leftward** at a configurable speed
-- Auto-**destroys itself** when it scrolls off screen (`x < -12`)
-- Keeps the game clean and prevents memory leaks
-
-```csharp
-transform.position += Vector3.left * speed * Time.deltaTime;
-```
-
----
-
-### 🏭 `Spawner.cs`
-> The endless pipe factory!
-
-- Spawns new pipe pairs at a **regular interval** (every 2 seconds)
-- Randomly offsets each pipe's **vertical position** for endless variety
-- Uses `InvokeRepeating` for reliable, framerate-independent spawning
-
-```csharp
-pipes.transform.position += Vector3.up * Random.Range(lowerLimit, upperLimit);
-```
+- Scenes, GameObjects, Components, and Prefabs
+- MonoBehaviour lifecycle (`Awake`, `Start`, `Update`, `OnEnable`, `OnDisable`)
+- 2D physics: `Rigidbody2D`, gravity, velocity, colliders, and triggers
+- Tags for identifying objects in collisions
+- Sprite rendering and sprite-swap animation
+- Material texture offset for scrolling effects
+- Unity UI (score text, Game Over, Play button)
+- `Time.deltaTime`, `Time.timeScale`, and `InvokeRepeating`
+- Input System package
+- WebGL build and deployment
 
 ---
 
-### 🌄 `BackgroundMovement.cs`
-> Creates the illusion of endless flight.
+## Run in the Unity Editor
 
-- Scrolls the background texture using **UV texture offset animation**
-- Runs every frame for a seamless, looping parallax scroll effect
-- Makes the world feel alive even though the bird stays center-screen!
+**Requirements:** Unity Hub and Unity 6.
 
-```csharp
-meshRenderer.material.mainTextureOffset += new Vector2(animationSpeed * Time.deltaTime, 0);
-```
-
----
-
-## ✨ Features
-
-- ✅ **Playable live online** via WebGL deployment on Vercel
-- ✅ Smooth **60 FPS** target gameplay
-- ✅ Animated **3-frame bird wing flapping**
-- ✅ **Infinitely scrolling** background & ground
-- ✅ **Randomly positioned pipes** for endless replayability
-- ✅ **Live score tracking** with on-screen UI
-- ✅ **Game Over screen** with instant restart
-- ✅ Clean **state management** (menu → playing → game over)
-- ✅ Gemini AI-generated **custom sprite artwork**
-- ✅ Physics-based bird movement with **Rigidbody2D**
-- ✅ **Trigger-based collision** system (precise and lag-free!)
-
----
-
-## 🚀 How to Run & Play
-
-### 🌐 Option 1: Play Online in Browser (Recommended)
-No installation needed! Click to play directly:
-👉 **[https://flappy-bird-lake-psi.vercel.app/](https://flappy-bird-lake-psi.vercel.app/)**
-
----
-
-### 💻 Option 2: Open & Run in Unity Editor
-
-#### Prerequisites
-- [Unity Hub](https://unity.com/download) installed
-- **Unity 6.x** or later
-
-#### Steps
-1. **Clone** this repository:
-   ```bash
+1. Clone the repository:
+   ```
    git clone https://github.com/H-P-Jadeja/Flappy-Bird.git
    ```
-2. Open **Unity Hub** → Click **"Add project from disk"**
-3. Select the cloned `Flappy-Bird` folder
-4. Unity will import all assets automatically
-5. Open `Assets/Scenes/` and load the main scene
-6. Hit the ▶️ **Play** button in the Unity Editor
-7. Press `Space` to flap — **good luck!** 🍀
+2. Open Unity Hub, click **Add project from disk**, and select the cloned folder.
+3. Open the main scene from `Assets/Scenes/`.
+4. Press **Play**, click the Play button in the game, and use `Space` to flap.
 
 ---
 
-## 🌱 My Learning Journey
+## Known Limitations
 
-This project represents a **milestone** in my development journey. Starting with absolutely no Unity experience, here's what I learned building this game:
+- No touch or mobile input (keyboard only)
+- No sound effects or music
+- High score is not saved between sessions
+- Difficulty does not increase over time
+- Restart is done by clicking the Play button (Space does not restart)
 
-| Concept | What I Learned |
-|---------|---------------|
-| 🎮 Unity Basics | Scenes, GameObjects, Components, Prefabs |
-| 📜 C# Scripting | MonoBehaviour lifecycle (`Update`, `Awake`, `Start`) |
-| ⚙️ Physics | Rigidbody2D, velocity, gravity, colliders |
-| 🎯 Collision System | `OnCollisionEnter2D` vs `OnTriggerEnter2D` |
-| 🎨 2D Rendering | SpriteRenderer, Materials, UV texture scrolling |
-| 🏗️ Game Architecture | Inter-script communication with `FindAnyObjectByType<T>()` |
-| ⏱️ Timing | `InvokeRepeating`, `Time.deltaTime`, `Time.timeScale` |
-| 🌐 WebGL Deployment | Exporting Unity builds to WebGL & deploying on Vercel |
-| 🤖 AI-Assisted Dev | Using Gemini AI as a learning partner & code mentor |
+## Possible Future Improvements
 
----
-
-## 🙏 Acknowledgements
-
-| Who | Why |
-|-----|-----|
-| **Dong Nguyen** | Original creator of Flappy Bird (2013) — the game that started it all |
-| **Google Gemini AI** | My AI mentor who guided me through every single step of this project |
-| **Unity Technologies** | For the incredible (and free!) game engine that made this possible |
-| **Vercel** | For seamless WebGL web hosting and instant deployment |
-| **The Unity Community** | For the amazing tutorials, forums, and documentation |
+- Touch input support
+- Sound effects and background music
+- Saving the high score with `PlayerPrefs`
+- Increasing pipe speed as the score grows
 
 ---
 
-## 👨‍💻 About the Developer
+## Development Notes
 
-**H.P. Jadeja** — A developer who took the leap into game development with zero prior experience and built a fully working game with the power of curiosity + Gemini AI. This is just the beginning! 🚀
+This was my first Unity project, so I used **Google Gemini** as a learning aid to understand Unity and C# concepts and help with debugging. Some sprites were generated with Gemini (see `Assets/Sprites/`). I built and configured the scene, integrated the scripts, set up the physics and UI, tested the game, and deployed the WebGL build myself.
 
-> *"Every expert was once a beginner. This Flappy Bird clone is my 'Hello, World!' to the game development universe."*
+## Credits
 
----
+- Original game concept: **Flappy Bird** by Dong Nguyen (2013)
+- Built with **Unity**
+- Hosted on **Vercel**
 
-<div align="center">
+## Author
 
-### ⭐ If you liked this project, please give it a star! ⭐
-
-**Made with ❤️, Unity, C#, and a LOT of help from 🤖 Gemini AI**
-
-<br/>
-
-[![Play Live](https://img.shields.io/badge/▶️_Play_Live-Vercel-ff4757?style=for-the-badge&logo=vercel&logoColor=white)](https://flappy-bird-lake-psi.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-H--P--Jadeja-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/H-P-Jadeja/Flappy-Bird)
-[![Gemini](https://img.shields.io/badge/AI%20Partner-Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://gemini.google.com/)
-[![Unity](https://img.shields.io/badge/Built%20With-Unity%20Engine-000000?style=for-the-badge&logo=unity&logoColor=white)](https://unity.com/)
-
-<br/>
-
-*🐦 Keep Flapping, Keep Learning! 🐦*
-
-*© 2026 H.P. Jadeja — First Unity Project*
-
-</div>
+**H.P. Jadeja**
